@@ -59,7 +59,7 @@ public class ARTapToPlaceObject : MonoBehaviour
     {
         arRaycast = FindObjectOfType<ARRaycastManager>();
 
-        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+        var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
 
         arRaycast.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
