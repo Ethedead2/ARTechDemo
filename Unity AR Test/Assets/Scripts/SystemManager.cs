@@ -34,9 +34,9 @@ public class SystemManager : MonoBehaviour
     GameObject CameraMode;
 
     // The two types of cameras we will be using
-    GameObject ARGOBJSParent;
+    //GameObject ARGOBJSParent;
 
-    GameObject normalCam;
+    //GameObject normalCam;
 
     [SerializeField]
     GameObject interaction;
@@ -95,7 +95,8 @@ public class SystemManager : MonoBehaviour
         // Choose what camera we want active in our game scene based on if we are in tutorials 1 or 2 or not in either
         if(panels[2].gameObject.activeInHierarchy || panels[3].gameObject.activeInHierarchy)
         {
-            SetCameraTypes(0);
+            interaction.SetActive(false);
+            //SetCameraTypes(0);
             if (panels[3].gameObject.activeInHierarchy)
             {
                 interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = true;
@@ -104,27 +105,28 @@ public class SystemManager : MonoBehaviour
         }
         else
         {
+            interaction.SetActive(true);
             interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
             interaction.GetComponent<ARTapToPlaceObject>().enabled = true;
-            SetCameraTypes(1);
+            //SetCameraTypes(1);
         }
     }
 
-    // A function for choosing what type of camera is being used in the active panel
-    void SetCameraTypes(int activeCam)
-    {
-        // If active Cam is 0 than we want the normal camera. Otherwise we are using AR Camera
-        if(activeCam == 0)
-        {
-            normalCam.SetActive(true);
-            ARGOBJSParent.SetActive(false);
-        }
-        else
-        {
-            normalCam.SetActive(false);
-            ARGOBJSParent.SetActive(true);
-        }
-    }
+    //// A function for choosing what type of camera is being used in the active panel
+    //void SetCameraTypes(int activeCam)
+    //{
+    //    // If active Cam is 0 than we want the normal camera. Otherwise we are using AR Camera
+    //    if(activeCam == 0)
+    //    {
+    //        normalCam.SetActive(true);
+    //        ARGOBJSParent.SetActive(false);
+    //    }
+    //    else
+    //    {
+    //        normalCam.SetActive(false);
+    //        ARGOBJSParent.SetActive(true);
+    //    }
+    //}
     void AddListenersToButtons()
     {
         // Add listeners to all of the buttons
@@ -234,11 +236,11 @@ public class SystemManager : MonoBehaviour
         originalRoundTime = roundTime;
 
         // Assign the active camera
-        normalCam = CameraMode.transform.GetChild(0).gameObject;
-        ARGOBJSParent = CameraMode.transform.GetChild(1).gameObject;
+        //normalCam = CameraMode.transform.GetChild(0).gameObject;
+        //ARGOBJSParent = CameraMode.transform.GetChild(1).gameObject;
 
         // Fill the base info for the game to work
-        SetCameraTypes(0);
+        //SetCameraTypes(0);
         CollectCanvasInfo();
         SetCurrentPanel(0);
 
@@ -259,12 +261,15 @@ public class SystemManager : MonoBehaviour
     // A function for setting the stats
     void SetStats()
     {
+        arPlacement.IsPlaced = false;
+        timer.text = originalRoundTime.ToString();
+        countDownToStartText.text = originalCountDownAmount.ToString();
 
     }
 
     void Update()
     {
-        ObjectIsPlaced();
+        //ObjectIsPlaced();
     }
 
     public int Score
