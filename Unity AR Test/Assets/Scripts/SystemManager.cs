@@ -252,7 +252,6 @@ public class SystemManager : MonoBehaviour
         if(arPlacement.IsPlaced)
         {
             balls[0].gameObject.SetActive(true);
-            countDownToStartText.transform.parent.gameObject.SetActive(true);
             StartCoroutine(Tutorial2StartCountDown());
         }
     }

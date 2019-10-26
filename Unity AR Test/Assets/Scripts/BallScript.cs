@@ -22,6 +22,7 @@ public class BallScript : MonoBehaviour
         if(other.tag == "goal")
         {
             _systemManager.Score = _systemManager.Score += 10;
+            gameObject.SetActive(false);
         }
     }
 
