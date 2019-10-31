@@ -95,8 +95,11 @@ public class SystemManager : MonoBehaviour
         // Choose what camera we want active in our game scene based on if we are in tutorials 1 or 2 or not in either
         if(panels[2].gameObject.activeInHierarchy || panels[3].gameObject.activeInHierarchy)
         {
-            interaction.SetActive(false);
             //SetCameraTypes(0);
+            if(panels[2].gameObject.activeInHierarchy)
+            {
+                interaction.SetActive(true);
+            }
             if (panels[3].gameObject.activeInHierarchy)
             {
                 interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = true;
@@ -105,7 +108,8 @@ public class SystemManager : MonoBehaviour
         }
         else
         {
-            interaction.SetActive(true);
+            balls[0].gameObject.SetActive(false);
+            interaction.SetActive(false);
             interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
             interaction.GetComponent<ARTapToPlaceObject>().enabled = true;
             //SetCameraTypes(1);
@@ -262,6 +266,8 @@ public class SystemManager : MonoBehaviour
     void SetStats()
     {
         arPlacement.IsPlaced = false;
+        StopCoroutine(Tutorial2RoundTimer());
+        StopCoroutine(Tutorial2StartCountDown());
         timer.text = originalRoundTime.ToString();
         countDownToStartText.text = originalCountDownAmount.ToString();
 
