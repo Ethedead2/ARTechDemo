@@ -108,7 +108,14 @@ public class SystemManager : MonoBehaviour
         }
         else
         {
-            balls[0].gameObject.SetActive(false);
+            for (int i = 0; i < ballsParent.transform.childCount; i++)
+            {
+                if(balls[i].activeInHierarchy)
+                {
+                    balls[i].SetActive(true);
+                    break;
+                }
+            }
             interaction.SetActive(false);
             interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
             interaction.GetComponent<ARTapToPlaceObject>().enabled = true;

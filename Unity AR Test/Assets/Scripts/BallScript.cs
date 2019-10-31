@@ -6,9 +6,15 @@ public class BallScript : MonoBehaviour
 {
     SystemManager _systemManager;
 
+    GameObject bucket;
+
     void Start()
     {
         _systemManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<SystemManager>();
+        if(GameObject.FindGameObjectWithTag("bucket"))
+        {
+            bucket = GameObject.FindGameObjectWithTag("bucket");
+        }
     }
 
     IEnumerator SetInactive()
@@ -23,6 +29,7 @@ public class BallScript : MonoBehaviour
         {
             _systemManager.Score = _systemManager.Score += 10;
             gameObject.SetActive(false);
+            bucket.GetComponent<Bucket>().Pop();
         }
     }
 

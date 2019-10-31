@@ -66,6 +66,7 @@
     <Compile Include="Assets\My Stuff\Bucket.cs" />
     <Compile Include="Assets\Scripts\ARModifedTapToPlaceObject.cs" />
     <Compile Include="Assets\Scripts\BallScript.cs" />
+    <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\SystemManager.cs" />
     <None Include="Assets\Shaders\Rim.shader" />
     <Reference Include="Unity.XR.ARKit.FaceTracking.Editor">

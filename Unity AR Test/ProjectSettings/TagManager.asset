@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainCanvas
   - goal
+  - bucket
   layers:
   - Default
   - TransparentFX
