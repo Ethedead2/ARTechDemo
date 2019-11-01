@@ -629,6 +629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54747ff3941281347b1742883457c879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountofMisses: 0
+  amountofBaskets: 0
   ballsParent: {fileID: 704705569}
   CameraMode: {fileID: 1417012854}
   interaction: {fileID: 948255738}
@@ -4905,7 +4907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1554218505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5214,7 +5216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1669889410
 RectTransform:
   m_ObjectHideFlags: 0

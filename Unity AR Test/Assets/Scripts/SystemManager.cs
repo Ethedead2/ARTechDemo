@@ -26,6 +26,25 @@ public class SystemManager : MonoBehaviour
     // The current timer value
     Text timer;
 
+    // Missing shots amount Text
+    Text Misses;
+    // Amount of misses
+    public int amountofMisses = 0;
+    // Baskets Made amount Text
+    Text BasketsMade;
+    //Amount of Baskets made
+    public int amountofBaskets = 0;
+
+    // Timed Played amount Text
+    Text TimePlayed;
+    // Time Played Amount Float
+    float Timeplay;
+
+    //High Score Text
+    Text HighScoreText;
+    //High Score
+    int HighScore = 0;
+
     [SerializeField]
     Transform ballsParent;
 
@@ -272,11 +291,20 @@ public class SystemManager : MonoBehaviour
     // A function for setting the stats
     void SetStats()
     {
+        Timeplay += (originalRoundTime - roundTime);
         arPlacement.IsPlaced = false;
         StopCoroutine(Tutorial2RoundTimer());
         StopCoroutine(Tutorial2StartCountDown());
         timer.text = originalRoundTime.ToString();
         countDownToStartText.text = originalCountDownAmount.ToString();
+        TimePlayed.text = Timeplay.ToString();
+        if (score >= HighScore)
+        {
+            HighScore = score;
+        }
+        HighScoreText.text = HighScore.ToString();
+        Misses.text = amountofMisses.ToString();
+        BasketsMade.text = amountofBaskets.ToString();
 
     }
 

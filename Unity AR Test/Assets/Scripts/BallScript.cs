@@ -25,11 +25,15 @@ public class BallScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "goal")
+        if (other.tag == "goal")
         {
             _systemManager.Score = _systemManager.Score += 10;
             gameObject.SetActive(false);
-            bucket.GetComponent<Bucket>().Pop();
+            _systemManager.amountofBaskets += 1;
+        }
+        else
+        {
+            _systemManager.amountofMisses += 1;
         }
     }
 
