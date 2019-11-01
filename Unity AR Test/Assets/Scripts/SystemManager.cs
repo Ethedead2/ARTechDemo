@@ -98,6 +98,10 @@ public class SystemManager : MonoBehaviour
         scoreAmount = panels[3].Find("Score").Find("ScoreAmount").GetComponent<Text>();
         timer = panels[3].Find("Timer").transform.GetChild(0).GetComponent<Text>();
         countDownToStartText = panels[3].Find("CountDown").GetChild(0).GetComponent<Text>();
+        Misses = panels[4].Find("Misses").Find("miAmount").GetComponent<Text>();
+        BasketsMade = panels[4].Find("Baskets Made").Find("baAmount").GetComponent<Text>();
+        TimePlayed = panels[4].Find("TimePlayed").Find("tiAmount").GetComponent<Text>();
+        HighScoreText = panels[4].Find("HighScore").Find("hiAmount").GetComponent<Text>();
         AddListenersToButtons();
     }
 
