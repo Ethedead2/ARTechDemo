@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
+
     SystemManager _systemManager;
 
     GameObject bucket;
 
-    public Vector3 ballPos; //starting ball position
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
+    private Rigidbody ballRB;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class BallScript : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         gameObject.SetActive(false);
+        thrown = true;
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,14 +50,13 @@ public class BallScript : MonoBehaviour
     void Update()
     {
         if (gameObject.activeInHierarchy)
-        {
-            StartCoroutine(SetInactive());
+        {           
             if (!thrown && Input.GetMouseButtonDown(0))
             {
                 thrown = true;
-                ballClone = Instantiate(ball, ballPos, transform.rotation) as GameObject;
-                balll = ballClone.GetComponent<Rigidbody>();
+                ballRB = GetComponent<Rigidbody>();
                 //Sets the mouse pointers vector3
+                transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); 
                 mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
             }
             else if (Input.GetMouseButton(0))
@@ -64,11 +65,12 @@ public class BallScript : MonoBehaviour
                 force = mouseCurLocation - mousePreviousLocation;//Changes the force to be applied
                 mousePreviousLocation = mouseCurLocation;
                 force = force.normalized * 10;
-                balll.AddForce(force, ForceMode.Impulse);
+                ballRB.AddForce(force, ForceMode.Impulse);
             }
             else if (Input.GetMouseButtonUp(0))
             {
                 thrown = false;
+                StartCoroutine(SetInactive());
             }
         }
         else

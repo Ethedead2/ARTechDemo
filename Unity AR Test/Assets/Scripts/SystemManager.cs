@@ -287,7 +287,14 @@ public class SystemManager : MonoBehaviour
     {
         if(arPlacement.IsPlaced)
         {
-            balls[0].gameObject.SetActive(true);
+            for (int i = 0; i < balls.Count; i++)
+            {
+                if(balls[i].activeInHierarchy)
+                {
+                    balls[i].gameObject.SetActive(true);
+                    break;
+                }
+            }
             StartCoroutine(Tutorial2StartCountDown());
         }
     }
