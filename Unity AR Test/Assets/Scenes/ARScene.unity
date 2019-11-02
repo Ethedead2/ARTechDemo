@@ -202,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1054115413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &12062385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +332,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24754435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &24754435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,7 +2097,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487321621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487321621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3582,7 +3615,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799695153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1062158476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4423,7 +4467,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365498431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1365498431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4802,7 +4857,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 405377023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477190116}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1436812057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4916,6 +4982,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469917228}
   m_CullTransparentMesh: 0
+--- !u!1 &1477190115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477190117}
+  - component: {fileID: 1477190116}
+  m_Layer: 0
+  m_Name: AudioHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1477190116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477190115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000501ef409bb9b4589d60c89363b37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Background Music
+    clip: {fileID: 8300000, guid: f7f76481c52d46b4d837eb68740e714b, type: 3}
+    pitch: 1
+    volume: 0.35
+    loop: 1
+    source: {fileID: 0}
+  - name: Paper Ball
+    clip: {fileID: 8300000, guid: df2099735d080464387c5e978b97d6f5, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Point Gain
+    clip: {fileID: 8300000, guid: b9d75a3d1b66263478851c54a3d94cab, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Throwable Spawn
+    clip: {fileID: 8300000, guid: 3e047214111b64b4da5172ee12d8d368, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Miss Shot
+    clip: {fileID: 8300000, guid: 5bb121d82c760c44691570deb1e66744, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Place Block
+    clip: {fileID: 8300000, guid: 0ee2fa587e3c0fd4f8ccac065e2582d6, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Confetti
+    clip: {fileID: 8300000, guid: 448b676a505b83e4b8a7a2187e180591, type: 3}
+    pitch: 1
+    volume: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Bouncing Ball
+    clip: {fileID: 8300000, guid: a6143f0328a5da24b852fa38c37b6ebd, type: 3}
+    pitch: 1
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: ff23772770d3493429175374ce788379, type: 3}
+    pitch: 1
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1477190117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477190115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03419307, y: 0.014701135, z: 0.048734516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501893074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,6 +5243,7 @@ GameObject:
   - component: {fileID: 1526477059}
   - component: {fileID: 1526477058}
   - component: {fileID: 1526477057}
+  - component: {fileID: 1526477061}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -5191,6 +5356,14 @@ Transform:
   m_Father: {fileID: 713878231}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1526477061
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526477055}
+  m_Enabled: 1
 --- !u!1 &1539212094
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     private void PlaceObject()
     {
         Instantiate(trashCan, placementIndicator.transform.position, placementIndicator.transform.rotation);
+        //FindObjectOfType<AudioManager>().Play("Place Block");
        // trashCan.SetActive(true);
         //trashCan.transform.GetChild(0).transform.position = placementPose.position;
         //trashCan.transform.GetChild(0).transform.rotation = placementPose.rotation;
