@@ -55,42 +55,22 @@ public class BallScript : MonoBehaviour
 
     void Update()
     {
-        // Track a single touch as a direction control.
-        if (Input.touchCount > 0)
+        if (!thrown && Input.GetMouseButtonDown(0))
         {
-            Touch touch = Input.GetTouch(0);
-
-            // Handle finger movements based on touch phase.
-            switch (touch.phase)
-            {
-                // Record initial touch position.
-                case TouchPhase.Began:
-                    startPos = touch.position;
-                    directionChosen = false;
-                    thrown = true;
-                    ballRB.constraints = RigidbodyConstraints.None;
-                    //Sets the mouse pointers vector3
-                    transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
-                    mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
-                    break;
-
-                    // Determine direction by comparing the current touch position with the initial one.
-                    case TouchPhase.Moved:
-                    //direction = touch.position - startPos;
-                    mouseCurLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
-                    force = mouseCurLocation - mousePreviousLocation;//Changes the force to be applied
-                    mousePreviousLocation = mouseCurLocation;
-                    force = force.normalized * 10;
-                    ballRB.AddForce(force, ForceMode.Impulse);
-                        break;
-
-                // Report that a direction has been chosen when the finger is lifted.
-                case TouchPhase.Ended:
-                    directionChosen = true;
-                    thrown = false;
-                    StartCoroutine(SetInactive());
-                    break;
-            }
+            thrown = true;
+            //Sets the mouse pointers vector3
+            mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            mouseCurLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
+            force = mouseCurLocation - mousePreviousLocation;//Changes the force to be applied
+            mousePreviousLocation = mouseCurLocation;
+            force = force.normalized * 10;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            thrown = false;
         }
     }
 

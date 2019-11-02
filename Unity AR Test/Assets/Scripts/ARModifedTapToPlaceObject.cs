@@ -7,6 +7,7 @@ using System;
 
 public class ARModifedTapToPlaceObject : MonoBehaviour
 {
+    bool setPlacementIndicatorToInactive;
     public GameObject placementIndicator;
 
     private ARSessionOrigin arOrigin;
@@ -27,6 +28,10 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
 
         set { isPlaced = value; }
     }
+    void OnEnable()
+    {
+        setPlacementIndicatorToInactive = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +44,15 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdatePlacementPose();
-        UpdatePlacementIndicator();
-
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if(!setPlacementIndicatorToInactive)
         {
-            PlaceObject();
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+
+            if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                PlaceObject();
+            }
         }
     }
 
@@ -52,9 +60,10 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     {
         Instantiate(trashCan, placementIndicator.transform.position, placementIndicator.transform.rotation);
         //FindObjectOfType<AudioManager>().Play("Place Block");
-       // trashCan.SetActive(true);
+        //trashCan.SetActive(true);
         //trashCan.transform.GetChild(0).transform.position = placementPose.position;
         //trashCan.transform.GetChild(0).transform.rotation = placementPose.rotation;
+        setPlacementIndicatorToInactive = true;
         isPlaced = true;
     }
 
