@@ -70,8 +70,10 @@ public class SystemManager : MonoBehaviour
     List<List<Button>> allButtons = new List<List<Button>>();
 
     // A list of the randomized balls we will be using
-    [SerializeField]
     List<GameObject> balls = new List<GameObject>();
+
+    [SerializeField]
+    GameObject ball;
 
     ARModifedTapToPlaceObject arPlacement;
 
@@ -140,16 +142,11 @@ public class SystemManager : MonoBehaviour
 
     void ResetTutorial2()
     {
-        for (int i = 0; i < GameObject.FindGameObjectsWithTag("Delete").Length; i++)
+        if(GameObject.FindGameObjectsWithTag("Delete") != null)
         {
-            Destroy(GameObject.FindGameObjectsWithTag("Delete")[i]);
-        }
-        for (int i = 0; i < ballsParent.transform.childCount; i++)
-        {
-            if (balls[i].activeInHierarchy)
+            for (int i = 0; i < GameObject.FindGameObjectsWithTag("Delete").Length; i++)
             {
-                balls[i].SetActive(true);
-                break;
+                Destroy(GameObject.FindGameObjectsWithTag("Delete")[i]);
             }
         }
         interaction.SetActive(false);
@@ -254,10 +251,10 @@ public class SystemManager : MonoBehaviour
 
     void Awake()
     {
+        ball.SetActive(false);
         for (int i = 0; i < numberOfBallsToInstantiate; i++)
         {
-            balls[0].SetActive(false);
-            Instantiate(balls[0], ballsParent);
+            Instantiate(ball, ballsParent);
         }
 
         // Find a reference to the armodifed tap to placce script
@@ -281,6 +278,7 @@ public class SystemManager : MonoBehaviour
     {
         if(arPlacement.IsPlaced)
         {
+            interaction.SetActive(false);
             for (int i = 0; i < balls.Count; i++)
             {
                 if(balls[i].activeInHierarchy)

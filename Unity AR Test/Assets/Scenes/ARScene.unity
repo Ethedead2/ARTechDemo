@@ -763,17 +763,7 @@ MonoBehaviour:
   ballsParent: {fileID: 704705569}
   CameraMode: {fileID: 1417012854}
   interaction: {fileID: 948255738}
-  balls:
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  - {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
+  ball: {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
 --- !u!114 &166911980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6059,7 +6049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2034.4, y: -178.70001}
+  m_AnchoredPosition: {x: -2034.3984, y: -178.70001}
   m_SizeDelta: {x: 3689.6, y: 1019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706981708

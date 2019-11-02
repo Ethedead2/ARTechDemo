@@ -10,7 +10,6 @@ public class BallScript : MonoBehaviour
     GameObject bucket;
 
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
-    private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
     private Rigidbody ballRB;
 

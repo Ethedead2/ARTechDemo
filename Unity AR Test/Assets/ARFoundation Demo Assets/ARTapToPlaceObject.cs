@@ -23,7 +23,6 @@ public class ARTapToPlaceObject : MonoBehaviour
         arOrigin = FindObjectOfType<ARSessionOrigin>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdatePlacementPose();
