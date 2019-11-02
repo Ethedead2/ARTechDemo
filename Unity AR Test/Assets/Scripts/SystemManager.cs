@@ -130,6 +130,7 @@ public class SystemManager : MonoBehaviour
                     bucket.SetActive(false);
                 }
                 placementIndicatortut1.SetActive(true);
+                placementIndicatortut2.SetActive(false);
             }
             if(panels[3].gameObject.activeInHierarchy)
             {
@@ -140,7 +141,7 @@ public class SystemManager : MonoBehaviour
                 amountofBaskets = 0;
                 amountofMisses = 0;
                 placementIndicatortut2.SetActive(true);
-                
+                placementIndicatortut1.SetActive(false);
             }
         }
         else
@@ -338,12 +339,11 @@ public class SystemManager : MonoBehaviour
     {
         if(panels[3].gameObject.activeInHierarchy)
         {
-            for (int i = 0; i < balls.Count; i++)
+            if(Input.GetMouseButton(0))
             {
-                if( balls[i].GetComponent<BallScript>().Thrown == false && !balls[i].activeInHierarchy)
+                if(balls[0].GetComponent<BallScript>().Thrown == false && executeOnce)
                 {
-                    balls[i].gameObject.SetActive(true);
-                    break;     
+                    balls[0].SetActive(true);
                 }
             }
         }   
