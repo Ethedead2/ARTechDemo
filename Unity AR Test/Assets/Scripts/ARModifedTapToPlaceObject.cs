@@ -32,8 +32,8 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
-        trashCan = Instantiate(trashCan);
-        trashCan.SetActive(false);
+        //trashCan = Instantiate(trashCan);
+        //trashCan.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,8 +50,8 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
 
     private void PlaceObject()
     {
-        Instantiate(trashCan);
-        trashCan.SetActive(true);
+        Instantiate(trashCan, placementIndicator.transform.position, placementIndicator.transform.rotation);
+       // trashCan.SetActive(true);
         //trashCan.transform.GetChild(0).transform.position = placementPose.position;
         //trashCan.transform.GetChild(0).transform.rotation = placementPose.rotation;
         isPlaced = true;
