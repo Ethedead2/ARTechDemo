@@ -62,9 +62,7 @@ public class SystemManager : MonoBehaviour
     // All of the buttons active in our scene
     List<List<Button>> allButtons = new List<List<Button>>();
 
-    // A list of the randomized balls we will be using
-    List<GameObject> balls = new List<GameObject>();
-
+    
     [SerializeField]
     GameObject ball;
 
@@ -272,10 +270,7 @@ public class SystemManager : MonoBehaviour
         placementIndicatortut1.SetActive(false);
         placementIndicatortut2.SetActive(false);
         ball.SetActive(false);
-        for (int i = 0; i < numberOfBallsToInstantiate; i++)
-        {
-            Instantiate(ball, ballsParent);
-        }
+        //Instantiate(ball, ballsParent);
 
         // Find a reference to the armodifed tap to placce script
         arPlacement = interaction.GetComponent<ARModifedTapToPlaceObject>();
@@ -303,14 +298,14 @@ public class SystemManager : MonoBehaviour
             executeOnce = true;
             interaction.SetActive(false);
             StartCoroutine(Tutorial2StartCountDown());
-            for (int i = 0; i < balls.Count; i++)
-            {
-                if (!balls[i].activeInHierarchy)
-                {
-                    balls[i].gameObject.SetActive(true);
-                    break;
-                }
-            }
+            //for (int i = 0; i < balls.Count; i++)
+            //{
+            //    if (!balls[i].activeInHierarchy)
+            //    {
+            //        balls[i].gameObject.SetActive(true);
+            //        break;
+            //    }
+            //}
         }
     }
 
@@ -337,15 +332,9 @@ public class SystemManager : MonoBehaviour
 
     void CreateBall()
     {
-        if(panels[3].gameObject.activeInHierarchy)
+        if(panels[3].gameObject.activeInHierarchy && executeOnce)
         {
-            if(Input.GetMouseButton(0))
-            {
-                if(balls[0].GetComponent<BallScript>().Thrown == false && executeOnce)
-                {
-                    balls[0].SetActive(true);
-                }
-            }
+            ball.SetActive(true);
         }   
     }
 

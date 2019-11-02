@@ -30,7 +30,7 @@ public class BallScript : MonoBehaviour
     IEnumerator SetInactive()
     {
         yield return new WaitForSeconds(10);
-        transform.position = new Vector3(0, 0, 2.72f);
+        transform.position = new Vector3(0, 0, 4);
         ballRB.constraints = RigidbodyConstraints.FreezeAll;
         transform.parent.gameObject.SetActive(false);
         thrown = true;
@@ -44,7 +44,7 @@ public class BallScript : MonoBehaviour
             transform.parent.gameObject.SetActive(false);
             _systemManager.amountofBaskets += 1;
             FindObjectOfType<AudioManager>().Play("Point Gain");
-            transform.position = new Vector3(0, 0, 2.72f);
+            transform.position = new Vector3(0, 0, 4);
             ballRB.constraints = RigidbodyConstraints.FreezeAll;
         }
         else

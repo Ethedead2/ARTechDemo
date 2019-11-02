@@ -16,21 +16,28 @@ public class ARTapToPlaceObject : MonoBehaviour
     private Pose placementPose;
 
     private bool placementPoseIsValid = false;
-    
+
+    GameObject canv;
+    GameObject panel2;
     // Start is called before the first frame update
     void Start()
     {
+        canv = GameObject.FindGameObjectWithTag("MainCanvas");
+        panel2 = canv.transform.GetChild(2).gameObject;
         arOrigin = FindObjectOfType<ARSessionOrigin>();
     }
 
     void Update()
     {
-        UpdatePlacementPose();
-        UpdatePlacementIndicator();
-
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if(panel2.activeInHierarchy)
         {
-            PlaceObject();
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+
+            if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                PlaceObject();
+            }
         }
     }
 
