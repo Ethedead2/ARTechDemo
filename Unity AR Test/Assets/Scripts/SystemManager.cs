@@ -83,6 +83,7 @@ public class SystemManager : MonoBehaviour
         {
             if (transform.GetChild(i).GetComponent<Image>() != null)
                 panels.Add(transform.GetChild(i));
+
             allButtons.Add(new List<Button>());
         }
 
@@ -118,7 +119,6 @@ public class SystemManager : MonoBehaviour
         // Choose what camera we want active in our game scene based on if we are in tutorials 1 or 2 or not in either
         if(panels[2].gameObject.activeInHierarchy || panels[3].gameObject.activeInHierarchy)
         {
-            //SetCameraTypes(0);
             if(panels[2].gameObject.activeInHierarchy)
             {
                 interaction.SetActive(true);
@@ -127,33 +127,23 @@ public class SystemManager : MonoBehaviour
             {
                 interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = true;
                 interaction.GetComponent<ARTapToPlaceObject>().enabled = false;
+                score = 0;
+                amountofBaskets = 0;
+                amountofMisses = 0;
             }
         }
         else
         {
             ResetTutorial2();            
-            //SetCameraTypes(1);
         }
     }
 
-    //// A function for choosing what type of camera is being used in the active panel
-    //void SetCameraTypes(int activeCam)
-    //{
-    //    // If active Cam is 0 than we want the normal camera. Otherwise we are using AR Camera
-    //    if(activeCam == 0)
-    //    {
-    //        normalCam.SetActive(true);
-    //        ARGOBJSParent.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        normalCam.SetActive(false);
-    //        ARGOBJSParent.SetActive(true);
-    //    }
-    //}
-
     void ResetTutorial2()
     {
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("Delete").Length; i++)
+        {
+            Destroy(GameObject.FindGameObjectsWithTag("Delete")[i]);
+        }
         for (int i = 0; i < ballsParent.transform.childCount; i++)
         {
             if (balls[i].activeInHierarchy)
@@ -279,12 +269,6 @@ public class SystemManager : MonoBehaviour
         // Set the current roundtime value back to te original amount
         originalRoundTime = roundTime;
 
-        // Assign the active camera
-        //normalCam = CameraMode.transform.GetChild(0).gameObject;
-        //ARGOBJSParent = CameraMode.transform.GetChild(1).gameObject;
-
-        // Fill the base info for the game to work
-        //SetCameraTypes(0);
         CollectCanvasInfo();
         SetCurrentPanel(0);
 
@@ -322,12 +306,11 @@ public class SystemManager : MonoBehaviour
         HighScoreText.text = HighScore.ToString();
         Misses.text = amountofMisses.ToString();
         BasketsMade.text = amountofBaskets.ToString();
-
     }
 
     void Update()
     {
-        //ObjectIsPlaced();
+        ObjectIsPlaced();
     }
 
     public int Score
