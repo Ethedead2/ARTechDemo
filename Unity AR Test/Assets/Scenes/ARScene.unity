@@ -631,8 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountofMisses: 0
   amountofBaskets: 0
-  ballsParent: {fileID: 6271415809174427923, guid: 91bfed6e7485fd443be01c44b3f89996,
-    type: 3}
+  ballsParent: {fileID: 704705569}
   interaction: {fileID: 948255738}
   ball: {fileID: 6885395427195397947, guid: 56fce633d21f6c44ca498398d87b57df, type: 3}
   placementIndicatortut1: {fileID: 455594176}
