@@ -143,7 +143,7 @@ public class SystemManager : MonoBehaviour
 
     void ResetTutorial2()
     {
-        if(GameObject.FindGameObjectsWithTag("Delete") != null)
+        if(GameObject.FindGameObjectWithTag("Delete") != null)
         {
             for (int i = 0; i < GameObject.FindGameObjectsWithTag("Delete").Length; i++)
             {
