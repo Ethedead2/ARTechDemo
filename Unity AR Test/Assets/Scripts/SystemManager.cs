@@ -68,7 +68,7 @@ public class SystemManager : MonoBehaviour
 
     ARModifedTapToPlaceObject arPlacement;
 
-    bool executeOnce;
+    public bool executeOnce;
 
     [SerializeField]
     GameObject placementIndicatortut1;
@@ -332,9 +332,9 @@ public class SystemManager : MonoBehaviour
 
     void CreateBall()
     {
-        if(panels[3].gameObject.activeInHierarchy && executeOnce)
+        if(panels[3].gameObject.activeInHierarchy)
         {
-            ball.SetActive(true);
+            ball.SetActive(true);        
         }   
     }
 
