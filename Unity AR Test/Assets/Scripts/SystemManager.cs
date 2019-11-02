@@ -73,8 +73,6 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     GameObject placementIndicatortut1;
 
-    [SerializeField]
-    GameObject placementIndicatortut2;
 
     // A function for managing our canvas in the scene
     void CollectCanvasInfo()
@@ -128,7 +126,6 @@ public class SystemManager : MonoBehaviour
                     bucket.SetActive(false);
                 }
                 placementIndicatortut1.SetActive(true);
-                placementIndicatortut2.SetActive(false);
             }
             if(panels[3].gameObject.activeInHierarchy)
             {
@@ -138,7 +135,6 @@ public class SystemManager : MonoBehaviour
                 score = 0;
                 amountofBaskets = 0;
                 amountofMisses = 0;
-                placementIndicatortut2.SetActive(true);
                 placementIndicatortut1.SetActive(false);
             }
         }
@@ -162,7 +158,6 @@ public class SystemManager : MonoBehaviour
             bucket.SetActive(false);
         }
         placementIndicatortut1.SetActive(false);
-        placementIndicatortut2.SetActive(false);
         executeOnce = false;
         interaction.SetActive(false);
         interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
@@ -268,7 +263,6 @@ public class SystemManager : MonoBehaviour
     void Awake()
     {
         placementIndicatortut1.SetActive(false);
-        placementIndicatortut2.SetActive(false);
         ball.SetActive(false);
         //Instantiate(ball, ballsParent);
 
