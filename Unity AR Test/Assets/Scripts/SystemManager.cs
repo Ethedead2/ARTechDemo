@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SystemManager : MonoBehaviour
 {
+    GameObject bucket;
+
     // The number of balls we want to have pooled
     int numberOfBallsToInstantiate = 10;
 
@@ -70,6 +72,12 @@ public class SystemManager : MonoBehaviour
 
     bool executeOnce;
 
+    [SerializeField]
+    GameObject placementIndicatortut1;
+
+    [SerializeField]
+    GameObject placementIndicatortut2;
+
     // A function for managing our canvas in the scene
     void CollectCanvasInfo()
     {
@@ -117,6 +125,11 @@ public class SystemManager : MonoBehaviour
             if(panels[2].gameObject.activeInHierarchy)
             {
                 interaction.SetActive(true);
+                if(bucket != null)
+                {
+                    bucket.SetActive(false);
+                }
+                placementIndicatortut1.SetActive(true);
             }
             if(panels[3].gameObject.activeInHierarchy)
             {
@@ -126,6 +139,8 @@ public class SystemManager : MonoBehaviour
                 score = 0;
                 amountofBaskets = 0;
                 amountofMisses = 0;
+                placementIndicatortut2.SetActive(true);
+                
             }
         }
         else
@@ -143,6 +158,12 @@ public class SystemManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectsWithTag("Delete")[i]);
             }
         }
+        if (bucket != null)
+        {
+            bucket.SetActive(false);
+        }
+        placementIndicatortut1.SetActive(false);
+        placementIndicatortut2.SetActive(false);
         executeOnce = false;
         interaction.SetActive(false);
         interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
@@ -247,6 +268,8 @@ public class SystemManager : MonoBehaviour
 
     void Awake()
     {
+        placementIndicatortut1.SetActive(false);
+        placementIndicatortut2.SetActive(false);
         ball.SetActive(false);
         for (int i = 0; i < numberOfBallsToInstantiate; i++)
         {
@@ -275,6 +298,7 @@ public class SystemManager : MonoBehaviour
     {
         if(arPlacement.IsPlaced && !executeOnce)
         {
+            bucket = GameObject.FindGameObjectWithTag("bucket");
             executeOnce = true;
             interaction.SetActive(false);
             StartCoroutine(Tutorial2StartCountDown());

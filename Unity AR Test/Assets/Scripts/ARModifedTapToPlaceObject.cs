@@ -7,7 +7,6 @@ using System;
 
 public class ARModifedTapToPlaceObject : MonoBehaviour
 {
-    public GameObject objectToPlace;
     public GameObject placementIndicator;
 
     private ARSessionOrigin arOrigin;
@@ -33,7 +32,7 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
-        trashCan = Instantiate(objectToPlace);
+        trashCan = Instantiate(trashCan);
         trashCan.SetActive(false);
     }
 
