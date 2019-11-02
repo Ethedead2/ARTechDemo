@@ -136,6 +136,7 @@ public class SystemManager : MonoBehaviour
                 interaction.GetComponent<ARTapToPlaceObject>().enabled = false;
                 interaction.SetActive(true);
                 score = 0;
+                scoreAmount.text = score.ToString();
                 amountofBaskets = 0;
                 amountofMisses = 0;
                 placementIndicatortut2.SetActive(true);
@@ -288,6 +289,7 @@ public class SystemManager : MonoBehaviour
         //Set the text value references
         countDownToStartText.text = countDownTimedAmount.ToString();
         timer.text = roundTime.ToString();
+        scoreAmount.text = score.ToString();
     }
 
     void ObjectIsPlaced()
@@ -332,7 +334,7 @@ public class SystemManager : MonoBehaviour
 
     void CreateBall()
     {
-        if(panels[3].gameObject.activeInHierarchy)
+        if(panels[3].gameObject.activeInHierarchy && executeOnce)
         {
             ball.SetActive(true);        
         }   
