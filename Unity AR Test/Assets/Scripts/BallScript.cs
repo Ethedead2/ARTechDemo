@@ -16,7 +16,7 @@ public class BallScript : MonoBehaviour
     void Start()
     {
         _systemManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<SystemManager>();
-        if(GameObject.FindGameObjectWithTag("bucket"))
+        if (GameObject.FindGameObjectWithTag("bucket"))
         {
             bucket = GameObject.FindGameObjectWithTag("bucket");
         }
@@ -49,13 +49,13 @@ public class BallScript : MonoBehaviour
     void Update()
     {
         if (gameObject.activeInHierarchy)
-        {           
+        {
             if (!thrown && Input.GetMouseButtonDown(0))
             {
                 thrown = true;
                 ballRB = GetComponent<Rigidbody>();
                 //Sets the mouse pointers vector3
-                transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); 
+                transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
                 mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
             }
             else if (Input.GetMouseButton(0))
@@ -70,9 +70,18 @@ public class BallScript : MonoBehaviour
             {
                 thrown = false;
                 StartCoroutine(SetInactive());
+
             }
         }
         else
             StopCoroutine(SetInactive());
+    }
+
+    public bool Thrown
+    {
+        get
+        {
+            return thrown;
+        }
     }
 }

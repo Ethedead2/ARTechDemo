@@ -68,6 +68,8 @@ public class SystemManager : MonoBehaviour
 
     ARModifedTapToPlaceObject arPlacement;
 
+    bool executeOnce;
+
     // A function for managing our canvas in the scene
     void CollectCanvasInfo()
     {
@@ -141,6 +143,7 @@ public class SystemManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectsWithTag("Delete")[i]);
             }
         }
+        executeOnce = false;
         interaction.SetActive(false);
         interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
         interaction.GetComponent<ARTapToPlaceObject>().enabled = true;
@@ -270,18 +273,19 @@ public class SystemManager : MonoBehaviour
 
     void ObjectIsPlaced()
     {
-        if(arPlacement.IsPlaced)
+        if(arPlacement.IsPlaced && !executeOnce)
         {
+            executeOnce = true;
             interaction.SetActive(false);
+            StartCoroutine(Tutorial2StartCountDown());
             for (int i = 0; i < balls.Count; i++)
             {
-                if(!balls[i].activeInHierarchy)
+                if (!balls[i].activeInHierarchy)
                 {
                     balls[i].gameObject.SetActive(true);
                     break;
                 }
             }
-            StartCoroutine(Tutorial2StartCountDown());
         }
     }
 
@@ -303,6 +307,22 @@ public class SystemManager : MonoBehaviour
     void Update()
     {
         ObjectIsPlaced();
+        CreateBall();
+    }
+
+    void CreateBall()
+    {
+        if(panels[3].gameObject.activeInHierarchy)
+        {
+            for (int i = 0; i < balls.Count; i++)
+            {
+                if( balls[i].GetComponent<BallScript>().Thrown == true && !balls[i].activeInHierarchy)
+                {
+                    balls[i].gameObject.SetActive(true);
+                    break;     
+                }
+            }
+        }   
     }
 
     public int Score
