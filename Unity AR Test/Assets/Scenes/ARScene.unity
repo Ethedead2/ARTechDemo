@@ -631,11 +631,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountofMisses: 0
   amountofBaskets: 0
-  ballsParent: {fileID: 704705569}
+  ballsParent: {fileID: 6271415809174427923, guid: 91bfed6e7485fd443be01c44b3f89996,
+    type: 3}
   interaction: {fileID: 948255738}
-  ball: {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
-  placementIndicatortut1: {fileID: 0}
-  placementIndicatortut2: {fileID: 0}
+  ball: {fileID: 6885395427195397947, guid: 56fce633d21f6c44ca498398d87b57df, type: 3}
+  placementIndicatortut1: {fileID: 455594176}
+  placementIndicatortut2: {fileID: 1782520505}
 --- !u!114 &166911980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,7 +3637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1080870541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5768,7 +5769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1669889410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6719,7 +6720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1873874125
 RectTransform:
   m_ObjectHideFlags: 0

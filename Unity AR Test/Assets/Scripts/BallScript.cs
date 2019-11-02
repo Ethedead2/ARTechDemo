@@ -20,6 +20,8 @@ public class BallScript : MonoBehaviour
         {
             bucket = GameObject.FindGameObjectWithTag("bucket");
         }
+        ballRB = GetComponent<Rigidbody>();
+        ballRB.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     IEnumerator SetInactive()
@@ -52,8 +54,9 @@ public class BallScript : MonoBehaviour
         {
             if (!thrown && Input.GetMouseButtonDown(0))
             {
+
                 thrown = true;
-                ballRB = GetComponent<Rigidbody>();
+                ballRB.constraints = RigidbodyConstraints.None;
                 //Sets the mouse pointers vector3
                 transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
                 mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
