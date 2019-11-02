@@ -202,18 +202,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1054115413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &12062385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,18 +321,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24754435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &24754435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,18 +2145,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487321621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &487321621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,18 +3652,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799695153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1062158476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4537,18 +4493,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365498431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1365498431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4927,18 +4872,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 405377023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477190116}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1436812057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5114,7 +5048,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Place Block
     clip: {fileID: 8300000, guid: 0ee2fa587e3c0fd4f8ccac065e2582d6, type: 3}
-    pitch: 1
+    pitch: 0.75
     volume: 0.75
     loop: 0
     source: {fileID: 0}
@@ -5131,9 +5065,9 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Click
-    clip: {fileID: 8300000, guid: ff23772770d3493429175374ce788379, type: 3}
-    pitch: 1
-    volume: 0.6
+    clip: {fileID: 8300000, guid: 0c6b3e49d8714a14ab40980e61b55f48, type: 3}
+    pitch: 0.8
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1477190117

@@ -201,16 +201,19 @@ public class SystemManager : MonoBehaviour
 
     void InstructionsIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(1);
     }
 
     void Tutorial1IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(2);
     }
 
     void Tutorial2IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(3);
     }
 
@@ -221,6 +224,7 @@ public class SystemManager : MonoBehaviour
 
     void ReturnIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(0);
     }
 
