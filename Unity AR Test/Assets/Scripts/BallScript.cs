@@ -6,7 +6,8 @@ public class BallScript : MonoBehaviour
 {
 
     SystemManager _systemManager;
-    
+    [SerializeField]
+    Text scoreAmount;
     GameObject bucket;
     public Vector2 startPos;
     //public Vector2 direction;
@@ -40,6 +41,7 @@ public class BallScript : MonoBehaviour
         if (other.tag == "goal")
         {
             _systemManager.Score = _systemManager.Score += 10;
+            scoreAmount.text = _systemManager.Score.ToString();
             transform.parent.gameObject.SetActive(false);
             _systemManager.amountofBaskets += 1;
             FindObjectOfType<AudioManager>().Play("Point Gain");

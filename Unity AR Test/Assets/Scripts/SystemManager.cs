@@ -133,6 +133,7 @@ public class SystemManager : MonoBehaviour
                 interaction.GetComponent<ARTapToPlaceObject>().enabled = false;
                 interaction.SetActive(true);
                 score = 0;
+                scoreAmount.text = score.ToString();
                 amountofBaskets = 0;
                 amountofMisses = 0;
                 placementIndicatortut1.SetActive(false);
@@ -195,16 +196,19 @@ public class SystemManager : MonoBehaviour
 
     void InstructionsIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(1);
     }
 
     void Tutorial1IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(2);
     }
 
     void Tutorial2IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(3);
     }
 
@@ -215,6 +219,7 @@ public class SystemManager : MonoBehaviour
 
     void ReturnIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(0);
     }
 
@@ -282,6 +287,7 @@ public class SystemManager : MonoBehaviour
         //Set the text value references
         countDownToStartText.text = countDownTimedAmount.ToString();
         timer.text = roundTime.ToString();
+        scoreAmount.text = score.ToString();
     }
 
     void ObjectIsPlaced()
@@ -326,7 +332,7 @@ public class SystemManager : MonoBehaviour
 
     void CreateBall()
     {
-        if(panels[3].gameObject.activeInHierarchy)
+        if(panels[3].gameObject.activeInHierarchy && executeOnce)
         {
             ball.SetActive(true);        
         }   

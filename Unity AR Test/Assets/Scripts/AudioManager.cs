@@ -43,11 +43,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        s.source.Play();
-    }
+        Debug.Log("Playing Sound: " + name);
 
-    public void OnClick()
-    {
-        Play("Click");
+        s.source.Play();
     }
 }

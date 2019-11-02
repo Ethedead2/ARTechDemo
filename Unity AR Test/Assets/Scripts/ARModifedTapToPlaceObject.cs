@@ -19,6 +19,8 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
 
     [SerializeField]
     GameObject trashCan;
+    GameObject canv;
+
 
     bool isPlaced = false;
 
@@ -36,6 +38,7 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canv = GameObject.FindGameObjectWithTag("MainCanvas");
         arOrigin = FindObjectOfType<ARSessionOrigin>();
         //trashCan = Instantiate(trashCan);
         //trashCan.SetActive(false);
