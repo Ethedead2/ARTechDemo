@@ -340,7 +340,7 @@ public class SystemManager : MonoBehaviour
         {
             for (int i = 0; i < balls.Count; i++)
             {
-                if( balls[i].GetComponent<BallScript>().Thrown == true && !balls[i].activeInHierarchy)
+                if(balls[i].GetComponent<BallScript>().Thrown == false && !balls[i].activeInHierarchy)
                 {
                     balls[i].gameObject.SetActive(true);
                     break;     

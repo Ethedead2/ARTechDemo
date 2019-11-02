@@ -634,6 +634,8 @@ MonoBehaviour:
   ballsParent: {fileID: 704705569}
   interaction: {fileID: 948255738}
   ball: {fileID: 7166624329118703739, guid: 6f24b42659d827047a064d9ba93b85b7, type: 3}
+  placementIndicatortut1: {fileID: 0}
+  placementIndicatortut2: {fileID: 0}
 --- !u!114 &166911980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,7 +1707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455594177}
   m_Layer: 0
-  m_Name: Placement Indicator tut 1
+  m_Name: Placement Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3006,7 +3008,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1291437029}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &948255741
 MonoBehaviour:
@@ -3020,7 +3022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c74aa5d34393264eb33c35db0e23804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementIndicator: {fileID: 1782520505}
+  placementIndicator: {fileID: 455594176}
   trashCan: {fileID: -927199367670048503, guid: bd85c421df89fc540887d912a94b4871,
     type: 3}
 --- !u!1 &954694504
@@ -4107,8 +4109,8 @@ Transform:
   - {fileID: 713878231}
   - {fileID: 1046729308}
   - {fileID: 455594177}
-  - {fileID: 1782520506}
   - {fileID: 948255740}
+  - {fileID: 1782520506}
   m_Father: {fileID: 1417012855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6288,7 +6290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782520506}
   m_Layer: 0
-  m_Name: Placement Indicator tut2
+  m_Name: Placement Indicator (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6307,7 +6309,7 @@ Transform:
   m_Children:
   - {fileID: 1617914389}
   m_Father: {fileID: 1291437029}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1795277864
 GameObject:

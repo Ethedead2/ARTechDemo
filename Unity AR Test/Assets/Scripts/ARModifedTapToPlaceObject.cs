@@ -51,8 +51,8 @@ public class ARModifedTapToPlaceObject : MonoBehaviour
     private void PlaceObject()
     {
         trashCan.SetActive(true);
-        trashCan.transform.position = placementPose.position;
-        trashCan.transform.rotation = placementPose.rotation;
+        trashCan.transform.GetChild(0).transform.position = placementPose.position;
+        trashCan.transform.GetChild(0).transform.rotation = placementPose.rotation;
         isPlaced = true;
     }
 
