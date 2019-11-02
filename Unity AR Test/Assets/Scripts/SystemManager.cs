@@ -131,17 +131,7 @@ public class SystemManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < ballsParent.transform.childCount; i++)
-            {
-                if(balls[i].activeInHierarchy)
-                {
-                    balls[i].SetActive(true);
-                    break;
-                }
-            }
-            interaction.SetActive(false);
-            interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
-            interaction.GetComponent<ARTapToPlaceObject>().enabled = true;
+            ResetTutorial2();            
             //SetCameraTypes(1);
         }
     }
@@ -161,6 +151,26 @@ public class SystemManager : MonoBehaviour
     //        ARGOBJSParent.SetActive(true);
     //    }
     //}
+
+    void ResetTutorial2()
+    {
+        for (int i = 0; i < ballsParent.transform.childCount; i++)
+        {
+            if (balls[i].activeInHierarchy)
+            {
+                balls[i].SetActive(true);
+                break;
+            }
+        }
+        interaction.SetActive(false);
+        interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
+        interaction.GetComponent<ARTapToPlaceObject>().enabled = true;
+        arPlacement.IsPlaced = false;
+        StopCoroutine(Tutorial2RoundTimer());
+        StopCoroutine(Tutorial2StartCountDown());
+        timer.text = originalRoundTime.ToString();
+        countDownToStartText.text = originalCountDownAmount.ToString();
+    }
     void AddListenersToButtons()
     {
         // Add listeners to all of the buttons
@@ -303,11 +313,7 @@ public class SystemManager : MonoBehaviour
     void SetStats()
     {
         Timeplay += (originalRoundTime - roundTime);
-        arPlacement.IsPlaced = false;
-        StopCoroutine(Tutorial2RoundTimer());
-        StopCoroutine(Tutorial2StartCountDown());
-        timer.text = originalRoundTime.ToString();
-        countDownToStartText.text = originalCountDownAmount.ToString();
+        
         TimePlayed.text = Timeplay.ToString();
         if (score >= HighScore)
         {
