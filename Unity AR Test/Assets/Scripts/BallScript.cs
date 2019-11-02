@@ -38,10 +38,12 @@ public class BallScript : MonoBehaviour
             _systemManager.Score = _systemManager.Score += 10;
             gameObject.SetActive(false);
             _systemManager.amountofBaskets += 1;
+            FindObjectOfType<AudioManager>().Play("Point Gain");
         }
         else
         {
             _systemManager.amountofMisses += 1;
+            FindObjectOfType<AudioManager>().Play("Miss Shot");
         }
     }
 

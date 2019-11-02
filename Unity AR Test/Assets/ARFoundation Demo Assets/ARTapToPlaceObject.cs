@@ -37,6 +37,7 @@ public class ARTapToPlaceObject : MonoBehaviour
     private void PlaceObject()
     {
         Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        FindObjectOfType<AudioManager>().Play("Place Block");
     }
 
     private void UpdatePlacementIndicator()
