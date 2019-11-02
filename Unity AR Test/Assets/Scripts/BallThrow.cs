@@ -10,14 +10,16 @@ public class BallThrow : MonoBehaviour
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
+    [SerializeField]
+    int numOfBalls;
     private Rigidbody balll;
-
     void Start()
     {
+
+        ball.SetActive(false);
         /* Increase Gravity */
         Physics.gravity = new Vector3(0, -20, 0);
     }
-
 
     private Vector3 mousePreviousLocation;
     private Vector3 mouseCurLocation;
@@ -25,7 +27,7 @@ public class BallThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !thrown)
+        if (!thrown && Input.GetMouseButtonDown(0))
         {
             thrown = true;
             ballClone = Instantiate(ball, ballPos, transform.rotation) as GameObject;
