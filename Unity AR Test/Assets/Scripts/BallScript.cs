@@ -30,7 +30,9 @@ public class BallScript : MonoBehaviour
     IEnumerator SetInactive()
     {
         yield return new WaitForSeconds(10);
-        gameObject.SetActive(false);
+        transform.position = new Vector3(0, 0, 2.72f);
+        ballRB.constraints = RigidbodyConstraints.FreezeAll;
+        transform.parent.gameObject.SetActive(false);
         thrown = true;
     }
 
@@ -39,9 +41,11 @@ public class BallScript : MonoBehaviour
         if (other.tag == "goal")
         {
             _systemManager.Score = _systemManager.Score += 10;
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
             _systemManager.amountofBaskets += 1;
             FindObjectOfType<AudioManager>().Play("Point Gain");
+            transform.position = new Vector3(0, 0, 2.72f);
+            ballRB.constraints = RigidbodyConstraints.FreezeAll;
         }
         else
         {
