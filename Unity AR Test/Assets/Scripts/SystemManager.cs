@@ -48,15 +48,6 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     Transform ballsParent;
 
-    // A reference to the type of camera we are using
-    [SerializeField]
-    GameObject CameraMode;
-
-    // The two types of cameras we will be using
-    //GameObject ARGOBJSParent;
-
-    //GameObject normalCam;
-
     [SerializeField]
     GameObject interaction;
 
@@ -125,7 +116,7 @@ public class SystemManager : MonoBehaviour
             {
                 interaction.SetActive(true);
             }
-            if (panels[3].gameObject.activeInHierarchy)
+            if(panels[3].gameObject.activeInHierarchy)
             {
                 interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = true;
                 interaction.GetComponent<ARTapToPlaceObject>().enabled = false;
@@ -159,6 +150,7 @@ public class SystemManager : MonoBehaviour
         timer.text = originalRoundTime.ToString();
         countDownToStartText.text = originalCountDownAmount.ToString();
     }
+
     void AddListenersToButtons()
     {
         // Add listeners to all of the buttons
@@ -268,6 +260,7 @@ public class SystemManager : MonoBehaviour
         originalRoundTime = roundTime;
 
         CollectCanvasInfo();
+
         SetCurrentPanel(0);
 
         //Set the text value references
