@@ -275,7 +275,7 @@ public class SystemManager : MonoBehaviour
             interaction.SetActive(false);
             for (int i = 0; i < balls.Count; i++)
             {
-                if(balls[i].activeInHierarchy)
+                if(!balls[i].activeInHierarchy)
                 {
                     balls[i].gameObject.SetActive(true);
                     break;
