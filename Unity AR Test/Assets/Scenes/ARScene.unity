@@ -3023,7 +3023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementIndicator: {fileID: 455594176}
-  trashCan: {fileID: -927199367670048503, guid: bd85c421df89fc540887d912a94b4871,
+  trashCan: {fileID: 4072461728353611189, guid: a3e59f79b88673d45b4bd4731b2faeea,
     type: 3}
 --- !u!1 &954694504
 GameObject:
