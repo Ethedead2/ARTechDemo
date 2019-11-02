@@ -129,6 +129,7 @@ public class SystemManager : MonoBehaviour
             {
                 interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = true;
                 interaction.GetComponent<ARTapToPlaceObject>().enabled = false;
+                interaction.SetActive(true);
                 score = 0;
                 amountofBaskets = 0;
                 amountofMisses = 0;
