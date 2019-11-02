@@ -10,13 +10,11 @@ public class BallThrow : MonoBehaviour
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
-    [SerializeField]
-    int numOfBalls;
+    
     private Rigidbody balll;
     void Start()
     {
 
-        ball.SetActive(false);
         /* Increase Gravity */
         Physics.gravity = new Vector3(0, -20, 0);
     }
