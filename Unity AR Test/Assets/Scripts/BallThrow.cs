@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class BallThrow : MonoBehaviour
 {
@@ -27,8 +28,9 @@ public class BallThrow : MonoBehaviour
     {
         if (!thrown && Input.GetMouseButtonDown(0))
         {
+            
             thrown = true;
-            ballClone = Instantiate(ball, ballPos, transform.rotation) as GameObject;
+            ballClone = Instantiate(ball, ballPos, Quaternion.identity) as GameObject;            
             balll = ballClone.GetComponent<Rigidbody>();
             //Sets the mouse pointers vector3
             mousePreviousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
@@ -38,7 +40,7 @@ public class BallThrow : MonoBehaviour
             mouseCurLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y);
             force = mouseCurLocation - mousePreviousLocation;//Changes the force to be applied
             mousePreviousLocation = mouseCurLocation;
-            force = force.normalized * 10;
+            force = force.normalized * 5;
             balll.AddForce(force, ForceMode.Impulse);
         }
         else if (Input.GetMouseButtonUp(0))
