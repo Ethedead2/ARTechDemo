@@ -4,10 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BallScript : MonoBehaviour
 {
-    [SerializeField]
-    Text misses;
-    [SerializeField]
-    Text goals;
     SystemManager _systemManager;
     [SerializeField]
     Text scoreAmount;
@@ -34,6 +30,7 @@ public class BallScript : MonoBehaviour
     IEnumerator SetInactive()
     {
         yield return new WaitForSeconds(10);
+        _systemManager.Mises = _systemManager.Mises += 1;
         //transform.position = new Vector3(0, 0, 4);
         //ballRB.constraints = RigidbodyConstraints.FreezeAll;
         //transform.parent.gameObject.SetActive(false);
@@ -81,13 +78,5 @@ public class BallScript : MonoBehaviour
         //{
         //    thrown = false;
         //}
-    }
-
-    public bool Thrown
-    {
-        get
-        {
-            return thrown;
-        }
     }
 }

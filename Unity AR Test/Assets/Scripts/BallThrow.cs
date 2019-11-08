@@ -11,11 +11,9 @@ public class BallThrow : MonoBehaviour
     private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
     private bool vert = false;
-
     private Rigidbody balll;
     void Start()
     {
-
         /* Increase Gravity */
         Physics.gravity = new Vector3(0, -20, 0);
     }

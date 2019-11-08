@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d475452bb2292499fcc0256c6553b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 6240aabf7f79dd64ea40fa417d7c4282, type: 2}
+  mat: {fileID: 2100000, guid: 9517d7380a4da9942a5cd4b69811aca1, type: 2}
   timedColorSwap: 4
 --- !u!1 &195137480
 GameObject:
