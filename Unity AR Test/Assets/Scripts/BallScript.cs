@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BallScript : MonoBehaviour
 {
-
+    [SerializeField]
+    Text misses;
+    [SerializeField]
+    Text goals;
     SystemManager _systemManager;
     [SerializeField]
     Text scoreAmount;
@@ -40,6 +43,7 @@ public class BallScript : MonoBehaviour
     {
         if (other.tag == "goal")
         {
+            
             _systemManager.Score = _systemManager.Score += 10;
             scoreAmount.text = _systemManager.Score.ToString();
             transform.parent.gameObject.SetActive(false);

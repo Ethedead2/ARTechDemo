@@ -10,11 +10,11 @@ public class BallThrow : MonoBehaviour
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
     private Vector3 force;
-    
+    SystemManager _systemManager;
     private Rigidbody balll;
     void Start()
     {
-
+        _systemManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<SystemManager>();
         /* Increase Gravity */
         Physics.gravity = new Vector3(0, -20, 0);
     }
@@ -43,6 +43,7 @@ public class BallThrow : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            _systemManager.Mises = _systemManager.Mises += 1;
             thrown = false;
         }
         

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SystemManager : MonoBehaviour
 {
+    GameObject throwing;
+
     GameObject bucket;
 
     // The number of balls we want to have pooled
@@ -162,6 +164,7 @@ public class SystemManager : MonoBehaviour
         {
             bucket.SetActive(false);
         }
+        throwing.gameObject.SetActive(false);
         placementIndicatortut1.SetActive(false);
         placementIndicatortut2.SetActive(false);
         executeOnce = false;
@@ -259,6 +262,7 @@ public class SystemManager : MonoBehaviour
         }
         else
         {
+            throwing.gameObject.SetActive(true);
             countDownToStartText.transform.parent.gameObject.SetActive(false);
             countDownTimedAmount = originalCountDownAmount;
             StopCoroutine(Tutorial2StartCountDown());
@@ -268,6 +272,7 @@ public class SystemManager : MonoBehaviour
 
     void Awake()
     {
+        throwing = GameObject.FindGameObjectWithTag("throwing");
         placementIndicatortut1.SetActive(false);
         placementIndicatortut2.SetActive(false);
         ball.SetActive(false);
@@ -283,7 +288,7 @@ public class SystemManager : MonoBehaviour
         originalRoundTime = roundTime;
 
         CollectCanvasInfo();
-
+        
         SetCurrentPanel(0);
 
         //Set the text value references
@@ -339,7 +344,13 @@ public class SystemManager : MonoBehaviour
             ball.SetActive(true);        
         }   
     }
+    public int Mises
+    {
+        get { return amountofMisses; }
 
+        set { amountofMisses = value; }
+    }
+   
     public int Score
     {
         get { return score; }
