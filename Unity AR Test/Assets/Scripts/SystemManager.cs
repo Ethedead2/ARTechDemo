@@ -75,8 +75,6 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     GameObject placementIndicatortut1;
 
-    [SerializeField]
-    GameObject placementIndicatortut2;
 
     // A function for managing our canvas in the scene
     void CollectCanvasInfo()
@@ -130,7 +128,6 @@ public class SystemManager : MonoBehaviour
                     bucket.SetActive(false);
                 }
                 placementIndicatortut1.SetActive(true);
-                placementIndicatortut2.SetActive(false);
             }
             if(panels[3].gameObject.activeInHierarchy)
             {
@@ -141,7 +138,6 @@ public class SystemManager : MonoBehaviour
                 scoreAmount.text = score.ToString();
                 amountofBaskets = 0;
                 amountofMisses = 0;
-                placementIndicatortut2.SetActive(true);
                 placementIndicatortut1.SetActive(false);
             }
         }
@@ -166,7 +162,6 @@ public class SystemManager : MonoBehaviour
         }
         throwing.gameObject.SetActive(false);
         placementIndicatortut1.SetActive(false);
-        placementIndicatortut2.SetActive(false);
         executeOnce = false;
         interaction.SetActive(false);
         interaction.GetComponent<ARModifedTapToPlaceObject>().enabled = false;
@@ -204,16 +199,19 @@ public class SystemManager : MonoBehaviour
 
     void InstructionsIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(1);
     }
 
     void Tutorial1IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(2);
     }
 
     void Tutorial2IsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(3);
     }
 
@@ -224,6 +222,7 @@ public class SystemManager : MonoBehaviour
 
     void ReturnIsClicked()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SetCurrentPanel(0);
     }
 
@@ -274,7 +273,6 @@ public class SystemManager : MonoBehaviour
     {
         throwing = GameObject.FindGameObjectWithTag("throwing");
         placementIndicatortut1.SetActive(false);
-        placementIndicatortut2.SetActive(false);
         ball.SetActive(false);
         //Instantiate(ball, ballsParent);
 
